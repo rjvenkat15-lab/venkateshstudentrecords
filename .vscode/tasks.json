@@ -1,0 +1,51 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Student Record Management",
+            "type": "process",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "args": [
+                "-std=c11",
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-Iinclude",
+                "src/main.c",
+                "src/insert.c",
+                "src/display.c",
+                "src/search.c",
+                "src/update.c",
+                "src/delete.c",
+                "src/sort.c",
+                "src/file.c",
+                "-o",
+                "student_record_management_percentage.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run Student Record Management",
+            "type": "process",
+            "command": "${workspaceFolder}\\student_record_management_percentage.exe",
+            "dependsOn": "Build Student Record Management",
+            "dependsOrder": "sequence",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
